@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+
+Name: net/xcordio/vmmanagerservice/util/ReflectiveConfig.class
+Logger-Max-Level: INFO

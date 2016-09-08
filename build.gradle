@@ -1,0 +1,31 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'maven'
+apply from: 'version'
+
+group = 'net.xcordio'
+archivesBaseName = 'vm-manager-service'
+
+description = 'Virtual machine manager service'
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+install {
+	repositories.mavenInstaller {
+		pom.artifactId = "vm-maganer-service"
+	}
+}
+
+repositories {
+	mavenLocal()
+	mavenCentral()
+}
+
+dependencies {
+	compile "com.hierynomus:sshj:0.17.2"
+	compile "org.json:json:20160810"
+	compile project(":semplar-logger")
+	testCompile "junit:junit:4.12"
+}
