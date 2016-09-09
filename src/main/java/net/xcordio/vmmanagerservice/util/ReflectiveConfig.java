@@ -246,12 +246,10 @@ public class ReflectiveConfig {
 				log.debug("found subType " + typename + " for field " + fieldName);
 				// finding converter
 				converterMethod = findMethod(clazz, "convert" + typename);
-				if (converterMethod == null) return;
-				log.debug("found converter method " + converterMethod);
+				if (converterMethod != null) log.debug("found converter method " + converterMethod);
 				// finding allocator
 				allocatorMethod = findMethod(clazz, "alloc" + typename, String.class, null);
-				if (allocatorMethod == null) return;
-				log.debug("found allocator method " + allocatorMethod);
+				if (allocatorMethod != null) log.debug("found allocator method " + allocatorMethod);
 				// safety check: only allocator and converter can be present at the same time
 				if (allocatorMethod != null && converterMethod != null) throw new ConfigurationException("both allocator" +
 						" and converter methods are present in class " + clazz + " for fullType " + typename);

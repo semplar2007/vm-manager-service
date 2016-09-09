@@ -26,12 +26,14 @@ public class ServiceConfig {
 	
 	protected final static String confFN = "vm-manager-service.conf";
 	protected static File[] configPaths = {
-			new File("./" + confFN),
-			new File("dist/" + confFN),
-			new File("/etc/vm-manager-service/" + confFN),
+			new File("./", confFN),
+			new File("dist/", confFN),
+			new File("/etc/vm-manager-service/", confFN),
+			new File("src/test/resources/net/xcordio/vmmanagerservice/", confFN),
 	};
 	
 	protected static File findConfigFile() {
+		System.out.println(new File(".").getAbsolutePath());
 		for (File f : configPaths)
 			if (f.isFile())
 				return f;

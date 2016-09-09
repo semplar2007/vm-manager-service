@@ -6,10 +6,12 @@ import net.xcordio.vmmanagerservice.vps.linode.LinodeProvider;
 
 public class ServerInfo {
 	
-	public int ram; // in megabytes
-	public VPSProvider provider;
+	public LoginInfo login;
+	public String distribution;
+	public int ram; // in MB
+	public VPSProvider cloud;
 	
-	public VPSProvider convertVPSProvider(String type) {
+	public VPSProvider allocVPSProvider(String type) {
 		return ServiceMain.instance.providersMap.get(type);
 	}
 }

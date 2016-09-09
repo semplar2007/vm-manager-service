@@ -1,0 +1,28 @@
+{
+  "server": {
+    "login": {
+      "username": "silvagrig",
+      "password": ""
+    },
+    "distribution": "Ubuntu 16.04 LTS",
+    "ram": 512,
+    "cloud": "linode"
+  },
+  "installation": {
+    "server": "Apache",
+    "database": {
+      "provider": "mysql",
+      "username": "root",
+      "password": "admin1"
+    },
+    "framework": {
+      "name": "wordpress",
+      "plugins": [ "yoast", "seo" ]
+    },
+    "language": "php5",
+    "packages": [ "composer", "mysqltuner" ]
+  },
+  "parameters": {
+    "remove_index": true
+  }
+}
